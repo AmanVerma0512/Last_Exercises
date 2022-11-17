@@ -5,4 +5,3 @@ pandas
 scipy
 boto3
 pyyaml
-yaml
