@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import boto3
+import yaml
 from Interface import Interface
 import streamlit as st
 st.set_page_config(layout="wide")
@@ -25,7 +26,7 @@ def load_data():
     file_content = content_object.get()['Body'].read().decode('utf-8')
     print('File Read')
 
-    data = json.loads(file_content)
+    data = yaml.safe_load(file_content)
     print('File Converted to JSON')
     return data
 
